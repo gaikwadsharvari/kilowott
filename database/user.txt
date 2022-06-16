@@ -1,0 +1,25 @@
+[Yesterday 17:41] Sharvari Gaikwad
+CREATE SEQUENCE public.users_id_seq
+INCREMENT 1
+START 1
+MINVALUE 1
+MAXVALUE 9223372036854775807
+CACHE 1;CREATE TABLE IF NOT EXISTS public.users
+(
+id integer DEFAULT nextval('users_id_seq'::regclass),
+first_name text COLLATE pg_catalog."default",
+last_name text COLLATE pg_catalog."default",
+email text COLLATE pg_catalog."default",
+address_home text COLLATE pg_catalog."default",
+address_work text COLLATE pg_catalog."default",
+profile_pic text COLLATE pg_catalog."default",
+password text COLLATE pg_catalog."default",
+is_active boolean,
+is_admin boolean,
+is_delete boolean,
+created_when timestamp with time zone,
+created_by integer,
+modified_when timestamp with time zone,
+modified_by integer
+);
+
