@@ -1,0 +1,52 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item">User</li>
+  <li class="breadcrumb-item active">User List</li>
+</ol>
+
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <h2>{{title}}</h2>
+    </div>
+    <div class="card-body list">
+      <div class="">
+        <table id="user-list" class="table table-responsive-sm table-bordered table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th>Edit</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Address: Home</th>
+              <th>Address: Work</th>
+              <th>Status</th>
+              <th>Delete</th>
+          </tr>
+          </thead>
+          <tbody>
+            {{#each users}}
+                <tr>
+                  <td><a href="/users/edit/{{this.id}}"><i class="fa fa-pen"></a></td>
+                  <td>{{this.first_name}}</td>
+                  <td>{{this.last_name}}</td>
+                  <td>{{this.email}}</td>
+                  <td>{{this.address_home}}</td>
+                  <td>{{this.address_work}}</td>
+                  <td>{{#if this.is_active}}
+                <button type="button" id="{{this.id}}" class="btn btn-warning btn-sm btn-disable">Disable</button>
+                {{else}}
+                <button type="button" id="{{this.id}}" class="btn btn-warning btn-sm btn-enable">Enable</button>
+                {{/if}}</td>
+                    <td>{{#if this.is_delete}}Deleted
+                    {{else}}<a href="/users/delete/{{this.id}}"><i class="fa fa-trash"></a>{{/if}}</td>                   
+                </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="login-form">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-group">
+          <div class="card p-3 mb-0">
+            <div class="card-body">
+              <form action="/users/add" method="post">
+                <h5>Sign Up</h5>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-11 col-md-11">
+                      <input name="name" type="text" id="name" class="form-control" placeholder="first name"
+                        maxlength="15" required />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-11 col-md-11">
+                      <input name="surname" type="text" id="surname" class="form-control" placeholder="last name"
+                        maxlength="15" required />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-11 col-md-11">
+                      <input name="username" type="text" id="username" class="form-control" placeholder="email"
+                        maxlength="50" required />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-11 col-md-11">
+                      <input name="password" type="password" id="password" class="form-control" placeholder="Password"
+                        maxlength="25" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-4 col-4">
+                    <input type="hidden" name="isAdmin" value="true">
+                    <button class="btn btn-success submit-btn">SIGN UP</button>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="card login-brand pt-5 d-md-down-none">
+            <div class="card-body text-center">
+              <img clsas="img-fluid" src="" alt="Kilowott logo" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

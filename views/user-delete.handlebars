@@ -1,0 +1,27 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/">User</a></li>
+    <li class="breadcrumb-item active">Delete User</li>
+</ol>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <h2>{{title}}</h2>
+        </div>
+        <form class="user-edit-form" action="/users/delete/{{deleteUser.id}}" method="post">
+            <div class="card-body">
+
+                <div class="row form-group">
+
+                    <p class="ml-3">Are you sure you want to delete the user {{deleteUser.email}} ?</p>
+
+                </div>
+                <div class="row form-group form-buttons">
+                    <button class="btn btn-success submit-btn mr-3" type="submit" name="button"> <i
+                            class="fas fa-check pr-2"></i> Yes</button>
+                    <a class="btn btn-secondary" href="/users"><i class="fa fa-times pr-2"></i> Cancel </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/">User</a></li>
+  <li class="breadcrumb-item active">Edit User</li>
+</ol>
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <h2>{{title}}</h2>
+    </div>
+    <form class="user-edit-form" action="/users/edit/{{editUser.id}}" method="post">
+      <div class="card-body">
+        <div class="row form-group">
+          <div class="col-12 col-md-3">
+            <div class="">
+              <span class="required">*</span>
+              <label class="col-form-label" for="username">Username (Email ID) </label>
+              <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" title="Enter Email ID as Username."></i>
+            </div>
+            <div>
+              <input id="username" type="text" name="username" placeholder="Username" value="{{editUser.email}}" maxlength="50" class="form-control" disabled >
+              <input id="editUsername" type="hidden" value="{{editUser.email}}">
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="">
+              <span class="required">*</span>
+              <label class="col-form-label" for="name">Name</label>
+              <i class="fas fa-info-circle" data-toggle="tooltip" title="Enter the name."></i>
+            </div>
+            <div>
+              <input id="name" type="text" name="name" class="form-control" maxlength="50" value="{{editUser.first_name}}">
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="">
+              <span class="required">*</span>
+              <label class="col-form-label" for="surname">Surname</label>
+              <i class="fas fa-info-circle" data-toggle="tooltip" title="Enter the Surname."></i>
+            </div>
+            <div>
+              <input id="surname" type="text" name="surname" class="form-control" maxlength="50" value="{{editUser.last_name}}">
+            </div>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-12 col-md-3">
+            <div class="">
+              <span class="required">*</span>
+              <label class="col-form-label" for="address">Address (Home)</label>
+              <i class="fas fa-info-circle" data-toggle="tooltip" title="Enter the Address."></i>
+            </div>
+            <div>
+              <textarea name="addressHome" class="form-control" id="addressHome" cols="25" rows="5">{{editUser.address_home}}</textarea>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="">
+              <span class="required">*</span>
+              <label class="col-form-label" for="address">Address (Work)</label>
+              <i class="fas fa-info-circle" data-toggle="tooltip" title="Enter the Address."></i>
+            </div>
+            <div>
+              <textarea name="addressWork" class="form-control" id="addressWork" cols="25" rows="5">{{editUser.address_work}}</textarea>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="">
+              <label class="col-form-label" for="myImg">Image</label>
+              <i class="fas fa-info-circle" data-toggle="tooltip" data-placement="right" title="select image."></i>
+            </div>
+            <div>
+              <input type="file" class="mb-1" accept="image/*" id="photo" name="photo" onchange="readURL(this);">
+              <img id="blah" src="#" alt="your photo" />
+            </div>
+          </div>
+        </div>
+        <div class="row form-group form-buttons">
+          <button class="btn btn-success submit-btn mr-3" type="submit" name="button"> <i class="fas fa-check pr-2"></i> SAVE</button>
+          <a class="btn btn-secondary" href="/users"><i class="fa fa-times pr-2"></i> Cancel </a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
